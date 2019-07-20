@@ -4,12 +4,14 @@ go 1.12
 
 require (
 	cloud.google.com/go v0.43.0 // indirect
+	github.com/gofrs/uuid v3.2.0+incompatible // indirect
 	github.com/lib/pq v1.2.0 // indirect
-	github.com/pkg/errors v0.8.1 // indirect
+	github.com/pkg/errors v0.8.1
 	github.com/spf13/cobra v0.0.5 // indirect
 	github.com/spf13/viper v1.4.0 // indirect
 	github.com/volatiletech/inflect v0.0.0-20170731032912-e7201282ae8d // indirect
-	github.com/volatiletech/sqlboiler v3.4.0+incompatible // indirect
+	github.com/volatiletech/null v8.0.0+incompatible
+	github.com/volatiletech/sqlboiler v3.4.0+incompatible
 	go.uber.org/zap v1.10.0
 	golang.org/x/crypto v0.0.0-20190701094942-4def268fd1a4 // indirect
 	golang.org/x/exp v0.0.0-20190718202018-cfdd5522f6f6 // indirect
