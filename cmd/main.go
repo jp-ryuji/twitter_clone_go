@@ -5,6 +5,7 @@ import (
 	"os"
 	"os/signal"
 
+	"github.com/jp-ryuji/twitter_clone_go/internal/di"
 	"go.uber.org/zap"
 	"google.golang.org/grpc"
 )
@@ -14,8 +15,7 @@ const (
 )
 
 func main() {
-	// FIXME: Inject it based on the development mode.
-	logger, _ := zap.NewDevelopment()
+	logger := di.InjectLogger()
 
 	port, err := net.Listen("tcp", port)
 	if err != nil {
@@ -23,6 +23,9 @@ func main() {
 	}
 
 	server := grpc.NewServer()
+
+	closer := di.RegisterHandler(server)
+	defer closer()
 
 	go func() {
 		logger.Info("start gRPC server")
