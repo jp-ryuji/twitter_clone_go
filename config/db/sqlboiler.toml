@@ -1,0 +1,12 @@
+pkgname = "orm"
+output = "../internal/infrastructure/orm"
+#no-tests = true
+
+[psql]
+  dbname  = "twitter_clone_ruby_development"
+  host    = "localhost"
+  port    = 5432
+  user    = "postgres"
+  pass    = "postgres"
+  sslmode = "disable"
+  blacklist = ["schema_migrations", "ar_internal_metadata"]
