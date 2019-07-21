@@ -11,7 +11,7 @@
 | ORM | [SQLBoiler](https://github.com/volatiletech/sqlboiler) |
 
 ## Development
-* Generates a Go ORM from the tables. You should run the command after modifying the tables.
+* Generates a Go ORM from the tables. You should run the commands after modifying the tables.
   ```
-  $ go generate scripts/sqlboiler_generator.go
+  $ bash scripts/sqlboiler.sh
   ```
