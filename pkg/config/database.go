@@ -7,15 +7,15 @@ import (
 
 // Database represents a database configuration.
 type Database struct {
-	Driver           string
-	Host             string
-	Port             string
-	User             string
-	Password         string
-	Database         string
-	Args             map[string]string
-	WaitForConnected int
-	MaxOpenConns     int
+	Driver           string            `yaml:"driver"`
+	Host             string            `yaml:"host"`
+	Port             string            `yaml:"port"`
+	User             string            `yaml:"user"`
+	Password         string            `yaml:"password"`
+	Database         string            `yaml:"database"`
+	Args             map[string]string `yaml:"args"`
+	WaitForConnected int               `yaml:"waitForConnected"`
+	MaxOpenConns     int               `yaml:"maxOpenConns"`
 }
 
 // ToDataSourceName returns a data source name.

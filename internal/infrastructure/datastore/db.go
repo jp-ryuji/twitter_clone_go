@@ -31,6 +31,10 @@ func NewDB(cfg *config.Config, l *zap.Logger) (*sql.DB, error) {
 		}
 	}
 
+	if dbCfg.MaxOpenConns < 5 {
+		return nil, xerrors.Errorf("too less MaxOpenConns: %d", dbCfg.MaxOpenConns)
+	}
+
 	db.SetMaxOpenConns(dbCfg.MaxOpenConns)
 	db.SetMaxIdleConns(dbCfg.MaxOpenConns * 2)
 	db.SetConnMaxLifetime(time.Duration(dbCfg.MaxOpenConns) * time.Second)
